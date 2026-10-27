@@ -174,7 +174,7 @@ public class CharacterInitializationTest
     }
 
     /// <summary>
-    /// Tests that any character name is valid when no pattern is configured.
+    /// Tests that classic wire-compatible names remain valid when no pattern is configured.
     /// </summary>
     [Test]
     public void CharacterNameIsValidWithoutPattern()
@@ -182,6 +182,18 @@ public class CharacterInitializationTest
         var configuration = this._context.CreateNew<GameConfiguration>();
 
         Assert.That(configuration.IsValidCharacterName("Hero!"), Is.True);
+    }
+
+    /// <summary>
+    /// Names which cannot survive the CP874 identity field are always rejected.
+    /// </summary>
+    [Test]
+    public void CharacterNameRejectsNonWindows874Characters()
+    {
+        var configuration = this._context.CreateNew<GameConfiguration>();
+
+        Assert.That(configuration.IsValidCharacterName("อัศวิน"), Is.True);
+        Assert.That(configuration.IsValidCharacterName("Knight😀"), Is.False);
     }
 
     private CharacterClass CreateCharacterClass()

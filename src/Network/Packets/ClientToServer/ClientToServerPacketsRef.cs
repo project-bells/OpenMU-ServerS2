@@ -1,4 +1,4 @@
-﻿// <copyright file="ClientToServerPacketsRef.cs" company="MUnique">
+// <copyright file="ClientToServerPacketsRef.cs" company="MUnique">
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 // </copyright>
 
@@ -11619,8 +11619,8 @@ public readonly ref struct GuildCreateRequestRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(4, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(4, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(4, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(4, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -11706,8 +11706,8 @@ public readonly ref struct GuildCreateRequest075Ref
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(3, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(3, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(3, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(3, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -12557,8 +12557,8 @@ public readonly ref struct RemoveAllianceGuildRequestRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(4, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(4, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(4, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(4, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>

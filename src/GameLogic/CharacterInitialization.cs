@@ -29,9 +29,15 @@ public static class CharacterInitialization
     /// <returns><c>true</c>, if the name is valid; otherwise, <c>false</c>.</returns>
     public static bool IsValidCharacterName(this GameConfiguration configuration, string name)
     {
-        return string.IsNullOrWhiteSpace(configuration.CharacterNameRegex)
-               || Regex.IsMatch(name, configuration.CharacterNameRegex);
+        return IsClassicIdentityCharacter(name)
+               && (string.IsNullOrWhiteSpace(configuration.CharacterNameRegex)
+                   || Regex.IsMatch(name, configuration.CharacterNameRegex));
     }
+
+    private static bool IsClassicIdentityCharacter(string name) => name.All(character => character is <= '\u007F'
+        or >= '\u0E01' and <= '\u0E3A'
+        or '\u0E3F'
+        or >= '\u0E40' and <= '\u0E5B');
 
     /// <summary>
     /// Gets the first character slot of the account which isn't used by a character.

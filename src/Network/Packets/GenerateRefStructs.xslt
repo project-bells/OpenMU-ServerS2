@@ -759,14 +759,14 @@ using static System.Buffers.Binary.BinaryPrimitives;</xsl:text>
             <xsl:value-of select="pd:Index"/>
           </xsl:otherwise>
         </xsl:choose>
-      <xsl:text>, </xsl:text><xsl:choose><xsl:when test="pd:Length = 10"><xsl:text>Windows874Encoding.Instance</xsl:text></xsl:when><xsl:otherwise><xsl:text>System.Text.Encoding.UTF8</xsl:text></xsl:otherwise></xsl:choose><xsl:text>);</xsl:text>
+      <xsl:text>, </xsl:text><xsl:choose><xsl:when test="pd:Length = 8 or pd:Length = 10"><xsl:text>Windows874Encoding.Instance</xsl:text></xsl:when><xsl:otherwise><xsl:text>System.Text.Encoding.UTF8</xsl:text></xsl:otherwise></xsl:choose><xsl:text>);</xsl:text>
       <xsl:value-of select="$newline"/>
       <xsl:text>        set =&gt; this._data.Slice(</xsl:text>
         <xsl:value-of select="pd:Index"/>
         <xsl:if test="pd:Length">
           <xsl:text>, </xsl:text><xsl:value-of select="pd:Length"/>
         </xsl:if>
-      <xsl:text>).WriteString(value, </xsl:text><xsl:choose><xsl:when test="pd:Length = 10"><xsl:text>Windows874Encoding.Instance</xsl:text></xsl:when><xsl:otherwise><xsl:text>System.Text.Encoding.UTF8</xsl:text></xsl:otherwise></xsl:choose><xsl:text>);</xsl:text>
+      <xsl:text>).WriteString(value, </xsl:text><xsl:choose><xsl:when test="pd:Length = 8 or pd:Length = 10"><xsl:text>Windows874Encoding.Instance</xsl:text></xsl:when><xsl:otherwise><xsl:text>System.Text.Encoding.UTF8</xsl:text></xsl:otherwise></xsl:choose><xsl:text>);</xsl:text>
     </xsl:template>
 
     <xsl:template match="pd:Field[pd:Type = 'Binary']" mode="get">

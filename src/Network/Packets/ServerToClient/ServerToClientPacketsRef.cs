@@ -1,4 +1,4 @@
-﻿// <copyright file="ServerToClientPacketsRef.cs" company="MUnique">
+// <copyright file="ServerToClientPacketsRef.cs" company="MUnique">
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 // </copyright>
 
@@ -17829,8 +17829,8 @@ public readonly ref struct GuildSoccerScoreUpdateRef
     /// </summary>
     public string RedTeamName
     {
-        get => this._data.ExtractString(4, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(4, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(4, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(4, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -17847,8 +17847,8 @@ public readonly ref struct GuildSoccerScoreUpdateRef
     /// </summary>
     public string BlueTeamName
     {
-        get => this._data.ExtractString(13, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(13, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(13, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(13, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -19755,8 +19755,8 @@ public readonly ref struct GuildListRef
     /// </summary>
     public string RivalGuildName
     {
-        get => this._data.ExtractString(13, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(13, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(13, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(13, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -20542,8 +20542,8 @@ public readonly ref struct GuildWarRequestRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(3, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(3, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(3, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(3, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -20630,8 +20630,8 @@ public readonly ref struct GuildWarDeclaredRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(3, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(3, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(3, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(3, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -20736,8 +20736,8 @@ public readonly ref struct GuildWarEndedRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(4, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(4, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(4, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(4, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -21212,8 +21212,8 @@ public readonly ref struct AllianceGuildEntryRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(33, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(33, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(33, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(33, 8).WriteString(value, Windows874Encoding.Instance);
     }
 }
 }
@@ -21672,8 +21672,8 @@ public readonly ref struct GuildInformationRef
     /// </summary>
     public string AllianceGuildName
     {
-        get => this._data.ExtractString(9, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(9, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(9, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(9, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -21681,8 +21681,8 @@ public readonly ref struct GuildInformationRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(17, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(17, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(17, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(17, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -21829,8 +21829,8 @@ public readonly ref struct GuildInfoRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(2, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(2, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(2, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(2, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -21912,8 +21912,8 @@ public readonly ref struct SingleGuildInformation075Ref
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -32341,8 +32341,8 @@ public readonly ref struct CastleSiegeStatusResponseRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(24, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(24, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(24, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(24, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -32454,8 +32454,8 @@ public readonly ref struct CastleSiegeRegistrationResponseRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -32558,8 +32558,8 @@ public readonly ref struct CastleSiegeUnregisterResponseRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(6, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(6, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(6, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(6, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -32653,8 +32653,8 @@ public readonly ref struct CastleSiegeRegistrationStateResponseRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -32775,8 +32775,8 @@ public readonly ref struct CastleSiegeMarkRegistrationResponseRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -34204,8 +34204,8 @@ public readonly ref struct CastleSiegeBattleProcessRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -34887,8 +34887,8 @@ public readonly ref struct CastleSiegeSwitchInfoRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(8, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(8, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(8, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(8, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -35235,8 +35235,8 @@ public readonly ref struct RegisteredGuildEntryRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(0, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(0, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(0, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(0, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -35407,8 +35407,8 @@ public readonly ref struct CastleSiegeGuildEntryRef
     /// </summary>
     public string GuildName
     {
-        get => this._data.ExtractString(2, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(2, 8).WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.ExtractString(2, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(2, 8).WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>

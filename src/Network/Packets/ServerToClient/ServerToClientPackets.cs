@@ -1,4 +1,4 @@
-﻿// <copyright file="ServerToClientPackets.cs" company="MUnique">
+// <copyright file="ServerToClientPackets.cs" company="MUnique">
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 // </copyright>
 
@@ -18686,8 +18686,8 @@ public readonly struct GuildSoccerScoreUpdate
     /// </summary>
     public string RedTeamName
     {
-        get => this._data.Span.ExtractString(4, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(4, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(4, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(4, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -18704,8 +18704,8 @@ public readonly struct GuildSoccerScoreUpdate
     /// </summary>
     public string BlueTeamName
     {
-        get => this._data.Span.ExtractString(13, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(13, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(13, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(13, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -20694,8 +20694,8 @@ public readonly struct GuildList
     /// </summary>
     public string RivalGuildName
     {
-        get => this._data.Span.ExtractString(13, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(13, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(13, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(13, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -21574,8 +21574,8 @@ public readonly struct GuildWarRequest
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(3, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(3, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(3, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(3, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -21662,8 +21662,8 @@ public readonly struct GuildWarDeclared
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(3, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(3, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(3, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(3, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -21794,8 +21794,8 @@ public readonly struct GuildWarEnded
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(4, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(4, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(4, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(4, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -22381,8 +22381,8 @@ public readonly struct AllianceGuildEntry
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(33, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(33, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(33, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(33, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 }
 }
@@ -22841,8 +22841,8 @@ public readonly struct GuildInformation
     /// </summary>
     public string AllianceGuildName
     {
-        get => this._data.Span.ExtractString(9, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(9, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(9, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(9, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -22850,8 +22850,8 @@ public readonly struct GuildInformation
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(17, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(17, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(17, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(17, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -22998,8 +22998,8 @@ public readonly struct GuildInfo
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(2, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(2, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(2, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(2, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -23081,8 +23081,8 @@ public readonly struct SingleGuildInformation075
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -34318,8 +34318,8 @@ public readonly struct CastleSiegeStatusResponse
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(24, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(24, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(24, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(24, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -34431,8 +34431,8 @@ public readonly struct CastleSiegeRegistrationResponse
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -34535,8 +34535,8 @@ public readonly struct CastleSiegeUnregisterResponse
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(6, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(6, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(6, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(6, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -34630,8 +34630,8 @@ public readonly struct CastleSiegeRegistrationStateResponse
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -34752,8 +34752,8 @@ public readonly struct CastleSiegeMarkRegistrationResponse
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -36181,8 +36181,8 @@ public readonly struct CastleSiegeBattleProcess
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(5, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(5, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(5, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(5, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -36864,8 +36864,8 @@ public readonly struct CastleSiegeSwitchInfo
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(8, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(8, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(8, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(8, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -37212,8 +37212,8 @@ public readonly struct RegisteredGuildEntry
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(0, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(0, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(0, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(0, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>
@@ -37384,8 +37384,8 @@ public readonly struct CastleSiegeGuildEntry
     /// </summary>
     public string GuildName
     {
-        get => this._data.Span.ExtractString(2, 8, System.Text.Encoding.UTF8);
-        set => this._data.Slice(2, 8).Span.WriteString(value, System.Text.Encoding.UTF8);
+        get => this._data.Span.ExtractString(2, 8, Windows874Encoding.Instance);
+        set => this._data.Slice(2, 8).Span.WriteString(value, Windows874Encoding.Instance);
     }
 
     /// <summary>

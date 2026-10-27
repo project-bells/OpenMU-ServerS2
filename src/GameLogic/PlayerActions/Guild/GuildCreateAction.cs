@@ -28,6 +28,16 @@ public class GuildCreateAction
             return;
         }
 
+        // All supported MU clients reserve exactly eight one-byte characters.
+        // Keep Thai lossless through CP874 and reject values which would become
+        // '?' on the wire (and could otherwise collide in persistence).
+        if (guildName.Length is < 4 or > 8 || guildName.Any(character => !IsAllowedGuildNameCharacter(character)))
+        {
+            await creator.InvokeViewPlugInAsync<IShowGuildCreateResultPlugIn>(
+                p => p.ShowGuildCreateResultAsync(GuildCreateErrorDetail.GuildAlreadyExist)).ConfigureAwait(false);
+            return;
+        }
+
         if (creator.GameContext.PlugInManager.GetPlugInPoint<IGuildCreatingPlugIn>() is { } plugInPoint)
         {
             var eventArgs = new CancelEventArgs();
@@ -61,4 +71,11 @@ public class GuildCreateAction
             await creator.InvokeViewPlugInAsync<IShowGuildCreateResultPlugIn>(p => p.ShowGuildCreateResultAsync(GuildCreateErrorDetail.GuildAlreadyExist)).ConfigureAwait(false);
         }
     }
+
+    private static bool IsAllowedGuildNameCharacter(char character) => character is >= 'A' and <= 'Z'
+        or >= 'a' and <= 'z'
+        or >= '0' and <= '9'
+        or >= '\u0E01' and <= '\u0E3A'
+        or '\u0E3F'
+        or >= '\u0E40' and <= '\u0E5B';
 }

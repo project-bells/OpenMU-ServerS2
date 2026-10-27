@@ -4,6 +4,9 @@
 
 namespace MUnique.OpenMU.Network.Packets.Tests;
 
+using MUnique.OpenMU.Network.Packets.ClientToServer;
+using MUnique.OpenMU.Network.Packets.ServerToClient;
+
 /// <summary>
 /// Tests the Thai wire encoding used by classic ten-byte identity fields.
 /// </summary>
@@ -23,5 +26,42 @@ public class Windows874EncodingTests
 
         Assert.That(bytes, Has.Length.EqualTo(name.Length));
         Assert.That(Windows874Encoding.Instance.GetString(bytes), Is.EqualTo(name));
+    }
+
+    /// <summary>
+    /// Verifies that unsupported input is detected before it reaches a fixed field.
+    /// </summary>
+    [TestCase("อัศวิน", true)]
+    [TestCase("Aegis123", true)]
+    [TestCase("อัศวิน😀", false)]
+    [TestCase("กิลด์é", false)]
+    public void RepresentabilityIsDetected(string value, bool expected)
+    {
+        Assert.That(Windows874Encoding.IsRepresentable(value), Is.EqualTo(expected));
+    }
+
+    /// <summary>
+    /// Verifies the real eight-byte guild creation field, not just the codec in isolation.
+    /// </summary>
+    [Test]
+    public void ThaiGuildNameRoundTripsThroughPacket()
+    {
+        var packet = new GuildCreateRequest(new byte[GuildCreateRequest.Length]);
+        packet.GuildName = "อัศวิน";
+
+        Assert.That(packet.GuildName, Is.EqualTo("อัศวิน"));
+    }
+
+    /// <summary>
+    /// Verifies that variable-length announcements remain UTF-8.
+    /// </summary>
+    [Test]
+    public void ThaiAnnouncementRoundTripsThroughPacket()
+    {
+        const string message = "ประกาศ: เซิร์ฟเวอร์ Aegis-Mu พร้อมให้บริการ";
+        var packet = new ServerMessage(new byte[ServerMessage.GetRequiredSize(message)]);
+        packet.Message = message;
+
+        Assert.That(packet.Message, Is.EqualTo(message));
     }
 }

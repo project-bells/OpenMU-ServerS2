@@ -23,6 +23,15 @@ public sealed class Windows874Encoding : Encoding
     /// </summary>
     public static Windows874Encoding Instance { get; } = new();
 
+    /// <summary>
+    /// Determines whether every character can be represented losslessly.
+    /// </summary>
+    public static bool IsRepresentable(string value)
+    {
+        ArgumentNullException.ThrowIfNull(value);
+        return value.All(IsRepresentable);
+    }
+
     /// <inheritdoc />
     public override int GetByteCount(char[] chars, int index, int count) => count;
 
@@ -65,6 +74,11 @@ public sealed class Windows874Encoding : Encoding
         >= '\u0E40' and <= '\u0E5B' => (byte)(0xE0 + value - '\u0E40'),
         _ => (byte)'?',
     };
+
+    private static bool IsRepresentable(char value) => value is <= '\u007F'
+        or >= '\u0E01' and <= '\u0E3A'
+        or '\u0E3F'
+        or >= '\u0E40' and <= '\u0E5B';
 
     private static char Decode(byte value) => value switch
     {
